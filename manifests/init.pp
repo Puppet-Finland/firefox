@@ -21,7 +21,9 @@
 #   Debian and Ubuntu where the locales are packaged separately. Defining these 
 #   on other operating systems is harmless.
 #   email accounts, but their use can be extended to other areas.
-# 
+# [*homepage*]
+#   Default (system-wide) homepage. Defaults to 'about:home'.
+#
 # == Authors
 #
 # Samuli Seppänen <samuli.seppanen@gmail.com>
@@ -34,7 +36,8 @@ class firefox
 (
     $manage = 'yes',
     $manage_config = 'yes',
-    $locales = {}
+    $locales = {},
+    $homepage = 'about:home'
 
 ) inherits firefox::params
 {
@@ -45,7 +48,9 @@ if $manage == 'yes' {
     create_resources('firefox::locale', $locales)
 
     if $manage_config == 'yes' {
-        # TODO
+        class { 'firefox::config':
+            homepage => $homepage,
+        }
     }
 }
 }
