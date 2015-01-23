@@ -5,6 +5,7 @@ A Puppet module for managing Firefox
 # Module usage
 
 * [Class: firefox](manifests/init.pp)
+* [Define: firefox::locale](manifests/locale.pp)
 * [Define: firefox::profile](manifests/profile.pp)
 
 # Dependencies
@@ -15,6 +16,7 @@ See [metadata.json](metadata.json).
 
 This module has been tested on
 
+* Ubuntu 12.04 32-bit
 * Ubuntu 14.04 64-bit
 * Windows 7 64-bit
 
