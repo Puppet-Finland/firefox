@@ -7,6 +7,10 @@ A Puppet module for managing Firefox
 * [Class: firefox](manifests/init.pp)
 * [Define: firefox::profile](manifests/profile.pp)
 
+# Dependencies
+
+See [metadata.json](metadata.json).
+
 # Operating system support
 
 This module has been tested on
