@@ -24,3 +24,5 @@ modifications:
 * Debian
 * RedHat/CentOS
 * FreeBSD
+
+For details see [params.pp](manifests/params.pp).
