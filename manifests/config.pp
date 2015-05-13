@@ -17,8 +17,8 @@
 class firefox::config inherits firefox::params
 {
 
-    if $operatingsystem == 'windows' {
-        include firefox::config::windows
+    if $::operatingsystem == 'windows' {
+        include ::firefox::config::windows
     }
 
     # System-wide configuration file. Fragments are added to this file as 

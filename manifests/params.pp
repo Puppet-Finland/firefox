@@ -5,7 +5,7 @@
 #
 class firefox::params {
 
-    include os::params
+    include ::os::params
 
     case $::osfamily {
         'RedHat': {
@@ -19,7 +19,7 @@ class firefox::params {
             $package_provider = undef
             $file_perms = 644
             $dir_perms = 755
- 
+
             case $::operatingsystem {
                 'Debian': {
                     $package_name = 'iceweasel'
@@ -46,7 +46,7 @@ class firefox::params {
         'Windows': {
             $package_provider = 'chocolatey'
             $package_name = 'firefox'
-            $install_dir = "C:\\Program Files (x86)\\Mozilla Firefox"
+            $install_dir = 'C:\\Program Files (x86)\\Mozilla Firefox'
             $global_config = "${install_dir}\\browser\\defaults\\preferences\\syspref.js"
             $file_perms = undef
             $dir_perms = undef

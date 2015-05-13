@@ -5,7 +5,7 @@
 class firefox::install inherits firefox::params {
 
     package { $::firefox::params::package_name:
-        ensure => installed,
+        ensure   => installed,
         provider => $::firefox::params::package_provider,
     }
 }

@@ -15,12 +15,12 @@ define firefox::locale
     $id
 )
 {
-    include firefox::params
+    include ::firefox::params
 
     if $::osfamily == 'Debian' {
         package { "firefox-locale-${id}":
-            name => "${::firefox::params::package_name_locale}-${id}",
-            ensure => installed,
+            ensure  => installed,
+            name    => "${::firefox::params::package_name_locale}-${id}",
             require => Class['firefox::install'],
         }
     }

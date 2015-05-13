@@ -14,12 +14,12 @@ class firefox::config::windows inherits firefox::params
     $preferences_dir = "${defaults_dir}\\preferences"
 
     file { [ $browser_dir,
-             $defaults_dir,
-             $preferences_dir ]:
-        ensure => directory,
-        owner => $::os::params::adminuser,
-        group => $::os::params::admingroup,
+            $defaults_dir,
+            $preferences_dir ]:
+        ensure  => directory,
+        owner   => $::os::params::adminuser,
+        group   => $::os::params::admingroup,
         require => Class['firefox::install'],
         #before => Concat['firefox-syspref.js'],
-    }  
+    }
 }

@@ -39,11 +39,11 @@ class firefox
 
 if $manage == 'yes' {
 
-    include firefox::install
+    include ::firefox::install
     create_resources('firefox::locale', $locales)
 
     if $manage_config == 'yes' {
-        class { 'firefox::config': }
+        class { '::firefox::config': }
         create_resources('firefox::profile', $profiles)
     }
 }
