@@ -12,13 +12,13 @@ class firefox::params {
             $package_name = 'firefox'
             $package_provider = undef
             $global_config = '/etc/firefox/pref/syspref.js'
-            $file_perms = 644
-            $dir_perms = 755
+            $file_perms = '0644'
+            $dir_perms = '0755'
         }
         'Debian': {
             $package_provider = undef
-            $file_perms = 644
-            $dir_perms = 755
+            $file_perms = '0644'
+            $dir_perms = '0755'
 
             case $::operatingsystem {
                 'Debian': {
@@ -40,8 +40,8 @@ class firefox::params {
             $package_provider = undef
             $package_name = 'firefox'
             $global_config = '/etc/firefox/pref/syspref.js'
-            $file_perms = 644
-            $dir_perms = 755
+            $file_perms = '0644'
+            $dir_perms = '0755'
         }
         'Windows': {
             $package_provider = 'chocolatey'
