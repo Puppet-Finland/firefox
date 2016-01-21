@@ -17,8 +17,6 @@ class firefox::config::windows inherits firefox::params
             $defaults_dir,
             $preferences_dir ]:
         ensure  => directory,
-        owner   => $::os::params::adminuser,
-        group   => $::os::params::admingroup,
         require => Class['firefox::install'],
         #before => Concat['firefox-syspref.js'],
     }
