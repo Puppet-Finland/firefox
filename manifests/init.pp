@@ -39,6 +39,7 @@ class firefox
 
 if $manage {
 
+    include ::firefox::prequisites
     include ::firefox::install
     create_resources('firefox::locale', $locales)
 
