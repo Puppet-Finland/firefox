@@ -5,12 +5,12 @@
 # == Parameters
 #
 # [*manage*]
-#   Manage Mozilla Firefox using this module. Valid values 'yes' (default) 
-#   and 'no'. This is primarily needed with Hiera where excluding classes 
-#   inherited from the lower levels in the hierarchy is not possible.
+#   Manage Mozilla Firefox using this module. Valid values true (default) and 
+#   false. This is primarily needed with Hiera where excluding classes inherited 
+#   from the lower levels in the hierarchy is not possible.
 # [*manage_config*]
-#   Manage Mozilla firefox configuration. Valid values 'yes' (default) and 
-#   'no'.
+#   Manage Mozilla firefox configuration. Valid values true (default) and 
+#   'false.
 # [*locales*]
 #   A hash of firefox::locale resources to realize. Currently only needed on 
 #   Debian and Ubuntu where the locales are packaged separately. Defining these 
@@ -29,20 +29,20 @@
 #
 class firefox
 (
-    $manage = 'yes',
-    $manage_config = 'yes',
-    $locales = {},
-    $profiles = {}
+    Boolean $manage = true,
+    Boolean $manage_config = true,
+            $locales = {},
+            $profiles = {}
 
 ) inherits firefox::params
 {
 
-if $manage == 'yes' {
+if $manage {
 
     include ::firefox::install
     create_resources('firefox::locale', $locales)
 
-    if $manage_config == 'yes' {
+    if $manage_config {
         class { '::firefox::config': }
         create_resources('firefox::profile', $profiles)
     }

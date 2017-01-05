@@ -12,7 +12,7 @@
 #
 define firefox::locale
 (
-    $id
+    String $id
 )
 {
     include ::firefox::params

@@ -14,8 +14,8 @@
 #
 define firefox::profile
 (
-    $username = $title,
-    $homepage = 'about:home'
+    String $username = $title,
+    String $homepage = 'about:home'
 )
 {
     include ::os::params
