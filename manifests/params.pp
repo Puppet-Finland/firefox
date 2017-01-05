@@ -11,12 +11,14 @@ class firefox::params {
         'RedHat': {
             $package_name = 'firefox'
             $package_provider = undef
+            $package_require = undef
             $global_config = '/etc/firefox/pref/syspref.js'
             $file_perms = '0644'
             $dir_perms = '0755'
         }
         'Debian': {
             $package_provider = undef
+            $package_require = undef
             $file_perms = '0644'
             $dir_perms = '0755'
 
@@ -38,6 +40,7 @@ class firefox::params {
         }
         'FreeBSD': {
             $package_provider = undef
+            $package_require = undef
             $package_name = 'firefox'
             $global_config = '/etc/firefox/pref/syspref.js'
             $file_perms = '0644'
@@ -45,6 +48,7 @@ class firefox::params {
         }
         'Windows': {
             $package_provider = 'chocolatey'
+            $package_require = Class['chocolatey']
             $package_name = 'firefox'
             $install_dir = 'C:\\Program Files (x86)\\Mozilla Firefox'
             $global_config = "${install_dir}\\browser\\defaults\\preferences\\syspref.js"
