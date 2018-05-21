@@ -50,7 +50,7 @@ class firefox::params {
             $package_provider = 'chocolatey'
             $package_require = Class['chocolatey']
             $package_name = 'firefox'
-            $install_dir = 'C:\\Program Files (x86)\\Mozilla Firefox'
+            $install_dir = 'C:\\Program Files\\Mozilla Firefox'
             $global_config = "${install_dir}\\browser\\defaults\\preferences\\syspref.js"
             $file_perms = undef
             $dir_perms = undef
