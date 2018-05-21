@@ -10,7 +10,7 @@
 #   from the lower levels in the hierarchy is not possible.
 # [*manage_config*]
 #   Manage Mozilla firefox configuration. Valid values true (default) and 
-#   'false.
+#   false.
 # [*locales*]
 #   A hash of firefox::locale resources to realize. Currently only needed on 
 #   Debian and Ubuntu where the locales are packaged separately. Defining these 
