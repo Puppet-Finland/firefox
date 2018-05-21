@@ -1,30 +1,30 @@
 # Firefox
 
-A Puppet module for managing Firefox
+A Puppet module for installing Firefox. There is limited support for
+configuring per-user settings.
+
+Most desktop operating systems are supported (or rather "should work"). This
+includes Fedora, Ubuntu, Debian, FreeBSD and Windows.
 
 # Module usage
 
-* [Class: firefox](manifests/init.pp)
-* [Define: firefox::locale](manifests/locale.pp)
-* [Define: firefox::profile](manifests/profile.pp)
+To install Firefox and do nothing else:
 
-# Dependencies
+    class { '::firefox':
+      manage_config => false,
+    }
 
-See [metadata.json](metadata.json).
+To ensure that a certain locale is installed (only required on Ubuntu/Debian):
 
-# Operating system support
+    ::firefox::locale { 'finnish':
+      id => 'fi',
+    }
 
-This module has been tested on
+To set Firefox home page for system user 'john':
 
-* Ubuntu 12.04 32-bit
-* Ubuntu 14.04 64-bit
-* Windows 7 64-bit
+    ::firefox::profile { 'john':
+      homepage => 'http://duckduckgo.com',
+    }
 
-The following operating systems should work out of the box or with small 
-modifications:
-
-* Debian
-* RedHat/CentOS
-* FreeBSD
-
-For details see [params.pp](manifests/params.pp).
+For details see [init.pp](manifests/init.pp), [locale.pp](manifests/locale.pp)
+ and [profile.pp](manifests/profile.pp).
